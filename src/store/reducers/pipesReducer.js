@@ -12,7 +12,7 @@ const pipesReducer = createSlice({
     reducers: {
         addNewPipe: (state) => {
             let height = Math.floor(Math.random() * 394) - 100;
-            if (height > 0) height = 1;
+            if (height < 0) height = 0;
             let { gameFieldWidth, gameFieldHeight } = state;
             state.arrayOfPipes.push({
                 pipeHeightTop: height,
